@@ -1,6 +1,5 @@
 package com.deliveryRangers.deliveryRangers.model;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.UpdateTimestamp;
@@ -33,7 +32,7 @@ public class Pedido {
 	
 	@NotBlank(message = " O PREÇO é obrigatório!!!")
 	@Size(min = 1, max = 6)
-	private BigDecimal preco;
+	private float preco;
 	
 	@UpdateTimestamp
 	private LocalDateTime data;
@@ -57,11 +56,11 @@ public class Pedido {
 		this.descricao = descricao;
 	}
 
-	public BigDecimal getPreco() {
+	public float getPreco() {
 		return preco;
 	}
 
-	public void setPreco(BigDecimal preco) {
+	public void setPreco(float preco) {
 		this.preco = preco;
 	}
 
