@@ -32,13 +32,12 @@ public class ClienteController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Cliente> getById(@PathVariable Long id) {
-	return clienteRepository.findById(id)
-	.map(resposta -> ResponseEntity.ok(resposta))
-	.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+		return clienteRepository.findById(id).map(resposta -> ResponseEntity.ok(resposta))
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 	
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Cliente>> getByNome(@PathVariable String nome){
-	return ResponseEntity.ok(clienteRepository.findAllByNomeContainingIgnoreCase(nome));
+		return ResponseEntity.ok(clienteRepository.findAllByNomeContainingIgnoreCase(nome));
 	}
 }
