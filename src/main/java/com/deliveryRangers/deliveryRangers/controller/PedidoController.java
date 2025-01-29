@@ -28,6 +28,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/pedido")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PedidoController {
+	
+	
 
 	@Autowired 
 	private PedidoRepository pedidoRepository;
